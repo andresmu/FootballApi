@@ -6,23 +6,21 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-
+import { SharedModule } from './shared/shared.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MaterialModule } from './components/material/material.module';
+import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
 //Routes
 import { AppRoutingModule } from "./app-routing.module";
 
-//Services
-// import { MovieService } from "./services/movie.service";
-
 // Components
 import { AppComponent } from './app.component';
-// import { FooterComponent } from './components/shared/footer/footer.component';
-// import { NavbarComponent } from './components/shared/navbar/navbar.component';
-// import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
-// import { LayoutAppComponent } from './components/shared/layout-app/layout-app.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent,
     // FooterComponent,
     // NavbarComponent,
     // SidebarComponent,
@@ -35,7 +33,11 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
+    NgxPaginationModule,
+    MaterialModule,
+    PageNotFoundModule
   ],
   providers: [
     // MovieService,

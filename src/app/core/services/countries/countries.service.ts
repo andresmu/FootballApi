@@ -12,7 +12,7 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllCoutries(): Observable<Api<Country>> {
+  getAllCoutries() {
    return this.http.get<any>(`${environment.API}/countries`);
   }
 }

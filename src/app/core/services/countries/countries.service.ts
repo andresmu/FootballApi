@@ -13,6 +13,6 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
 
   getAllCoutries() {
-   return this.http.get<any>(`${environment.API}/countries`);
+   return this.http.get<Api<Country>>(`${environment.API}/countries`);
   }
 }

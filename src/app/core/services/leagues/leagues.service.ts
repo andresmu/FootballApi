@@ -21,7 +21,8 @@ export class LeaguesService {
     if (season !== undefined && season !== null && season !== 0) {
       return this.http.get<any>(`${environment.API}/leagues/country/${countryCode}/${season}`);
     }else{
-      return this.http.get<any>(`${environment.API}/leagues/country/${countryCode}`);
+      console.log('IAPI y ILeague');
+      return this.http.get<Api<League>>(`${environment.API}/leagues/country/${countryCode}`);
     }
    }
 }

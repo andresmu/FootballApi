@@ -11,9 +11,9 @@ import { take } from 'rxjs/operators';
 })
 export class LeagueListComponent implements OnInit {
 
+  loading: boolean = true;
   leagues = [];
   totalLeagues: string;
-  season = 2020;
 
   constructor(private leaguesService: LeaguesService, private router: ActivatedRoute) { }
 
@@ -32,6 +32,7 @@ export class LeagueListComponent implements OnInit {
           res => {
             this.totalLeagues = res.api.results.toString();
             this.leagues = res.api.leagues;
+            this.loading = false;
           },
           err => {
             console.log(err);

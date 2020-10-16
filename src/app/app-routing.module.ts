@@ -22,12 +22,16 @@ const routes: Routes = [
         loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)
       },
       {
+        path: 'leagues/:code',
+        loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)
+      },
+      {
         path: 'teams/:league/:season',
         loadChildren: () => import('./components/team/team.module').then(m => m.TeamModule)
       },
       {
-        path: 'leagues/:code',
-        loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)
+        path: 'player/:team/:season',
+        loadChildren: () => import('./components/player/player.module').then(m => m.PlayerModule)
       },
       {
         path: '**',

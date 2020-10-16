@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamListComponent implements OnInit {
 
+  loading: boolean = true;
+  teams = [];
+
   constructor() { }
 
   ngOnInit() {

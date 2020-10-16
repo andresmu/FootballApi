@@ -1,6 +1,7 @@
 <div class="container">
     <h1>Ligas en total: {{totalLeagues}}</h1>
     <h4>Elige una Liga:</h4>
+    <div class="loading-mask" *ngIf="loading"> </div>
     <div class="card-grid">
         <app-league *ngFor="let league of leagues" [league]="league"></app-league>
     </div>

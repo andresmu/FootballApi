@@ -9,6 +9,7 @@ import { take } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   
+  loading: boolean = true;
   public viewCount = 20;
   totalCountries = 0;
   countries = [];
@@ -33,6 +34,7 @@ export class HomeComponent implements OnInit {
       response => {
         this.countriesList = response.api.countries;
         this.totalCountries = response.api.results;
+        this.loading = false;
         this.countries = response.api.countries.slice(0, this.viewCount);
       },
       err => {

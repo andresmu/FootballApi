@@ -34,7 +34,7 @@
             <mat-divider></mat-divider>
             <mat-list-item class="character-list-item">
                 <h3 matLine>Final:</h3>
-                <p class="card-content-description" [matTooltip]="league.season_start" matTooltipPosition="left">{{ (league.season_start | slice: 0:5) + (league.season_start.length > 5 ? '...' : '')}}</p>
+                <p class="card-content-description" [matTooltip]="league.season_end" matTooltipPosition="left">{{ (league.season_end | slice: 0:5) + (league.season_end.length > 5 ? '...' : '')}}</p>
             </mat-list-item>
             <mat-divider></mat-divider>
         </mat-list>

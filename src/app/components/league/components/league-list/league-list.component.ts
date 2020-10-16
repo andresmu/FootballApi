@@ -15,7 +15,7 @@ export class LeagueListComponent implements OnInit {
   leagues = [];
   totalLeagues: string;
 
-  constructor(private leaguesService: LeaguesService, private router: ActivatedRoute) { }
+  constructor(public location: Location, private leaguesService: LeaguesService, private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.router.params.subscribe(routeParams => {

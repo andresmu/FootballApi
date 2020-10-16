@@ -18,6 +18,11 @@
             </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>
+                <h3 matLine>Formato:</h3>
+                <p class="card-content-description">{{ league.type}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
                 <h3 matLine>Finalizada:</h3>
                 <p class="card-content-description">{{ (league.is_current === 0 ? 'Si' : 'No')}}</p>
             </mat-list-item>

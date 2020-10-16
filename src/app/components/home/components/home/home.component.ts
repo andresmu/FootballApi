@@ -9,9 +9,27 @@ import { take } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  countries = [];
+
+  constructor(private episodesService: CountriesService) {
+
+   }
 
   ngOnInit() {
+    this.getCountries();
   }
 
+  getCountries(){
+    this.countries = [];
+    this.episodesService.getAllCoutries().pipe(take(1)).subscribe(
+      response => {
+        this.countries = response.api.countries;
+      },
+      err => {
+        console.log(err);
+      },
+      () => {
+          //petición finalizada
+      });
+  }
 }

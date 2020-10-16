@@ -9,11 +9,13 @@ import { MaterialModule } from '../material/material.module';
 import { HomeComponent } from './components/home/home.component';
 // import { SearchCharacterComponent } from './components/search-character/search-character.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { CountryComponent } from './components/country/country.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
+    CountryComponent,
     // BannerComponent,
     // CharacterComponent,
     // SearchCharacterComponent

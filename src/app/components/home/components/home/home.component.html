@@ -1,1 +1,9 @@
-<p>home works!</p>
+
+<div class="fondo">
+    <h1>¡Lista de Países!</h1>
+    <h4>Selecciona un país:</h4>
+    <hr>
+    <div class="country-grid">
+        <app-country *ngFor="let country of countries" [country]="country"></app-country>
+    </div>
+</div>

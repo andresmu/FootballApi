@@ -1,11 +1,11 @@
 interface ICountry {
     code: string;
-    name: string;
+    country: string;
     flag: string;
 }
 
 export class Country implements ICountry {
     code: string;
-    name: string;
+    country: string;
     flag: string;
 }

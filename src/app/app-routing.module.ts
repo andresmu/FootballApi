@@ -16,12 +16,12 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: '**',
+        loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
       }
     ]
-  },
-  {
-    path: '**',
-    loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 

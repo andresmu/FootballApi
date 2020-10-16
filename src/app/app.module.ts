@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MaterialModule } from './components/material/material.module';
 import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 //Routes
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -20,11 +21,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    // FooterComponent,
-    // NavbarComponent,
-    // SidebarComponent,
-    // LayoutAppComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +31,11 @@ import { LayoutComponent } from './components/layout/layout.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    SharedModule,
     NgxPaginationModule,
     MaterialModule,
-    PageNotFoundModule
+    MatToolbarModule,
+    PageNotFoundModule,
+    SharedModule
   ],
   providers: [
     // MovieService,

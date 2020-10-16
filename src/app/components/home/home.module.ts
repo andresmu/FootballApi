@@ -1,13 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from '../material/material.module';
-// import { BannerComponent } from './components/banner/banner.component';
-// import { CharacterComponent } from './components/character/character.component';
 import { HomeComponent } from './components/home/home.component';
-// import { SearchCharacterComponent } from './components/search-character/search-character.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { CountryComponent } from './components/country/country.component';
 
@@ -16,17 +11,12 @@ import { CountryComponent } from './components/country/country.component';
   declarations: [
     HomeComponent,
     CountryComponent,
-    // BannerComponent,
-    // CharacterComponent,
-    // SearchCharacterComponent
   ],
   imports: [
     CommonModule,
-    SharedModule,
     HomeRoutingModule,
     MaterialModule,
-    FormsModule,
-    NgxPaginationModule
+    FormsModule
   ],
   exports: [
     HomeComponent

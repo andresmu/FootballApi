@@ -18,6 +18,10 @@ const routes: Routes = [
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
       },
       {
+        path: 'leagues/:code',
+        loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)
+      },
+      {
         path: '**',
         loadChildren: () => import('./components/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
       }

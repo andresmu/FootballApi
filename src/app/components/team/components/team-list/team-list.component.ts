@@ -32,6 +32,7 @@ export class TeamListComponent implements OnInit {
   loading: boolean = true;
   teams = [];
   totalTeams: string;
+  season: number;
 
 
   constructor(public location: Location, private teamServices: TeamsService, private router: ActivatedRoute) { }
@@ -39,6 +40,7 @@ export class TeamListComponent implements OnInit {
   ngOnInit() {
     this.router.params.subscribe(routeParams => {
       this.getTeamsByLeague(routeParams.league);
+      this.season = routeParams.season;
     });
   }
 
@@ -52,7 +54,10 @@ export class TeamListComponent implements OnInit {
         this.totalTeams = res.api.results.toString();
         this.teams = res.api.teams;
         this.loading = false;
-        console.log('Done');
+        console.log('Done' + this.season);
+        this.teams.forEach(team => {
+          team.season = this.season;
+        });
       },
       err => {
         console.log(err);

@@ -9,10 +9,10 @@ import { Team } from 'src/app/core/models/team';
 export class TeamComponent implements OnInit {
 
   @Input() team: Team;
-
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

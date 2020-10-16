@@ -14,19 +14,23 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
+        //Home con paises
         path: 'home',
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
       },
       {
+        //Ligas
         path: 'leagues/:code',
         loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)
       },
       {
+        //Equipos por temporada
         path: 'teams/:league/:season',
         loadChildren: () => import('./components/team/team.module').then(m => m.TeamModule)
       },
       {
-        path: 'player/:team/:season',
+        //Jugadores por equipo y temporada
+        path: 'players/:team/:season',
         loadChildren: () => import('./components/player/player.module').then(m => m.PlayerModule)
       },
       {

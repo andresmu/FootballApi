@@ -11,6 +11,7 @@ interface ITeam {
     venue_address: string;
     venue_city: string;
     venue_capacity: number;
+    season?: number;
 }
 
 export class Team implements ITeam {
@@ -26,4 +27,5 @@ export class Team implements ITeam {
     venue_address: string;
     venue_city: string;
     venue_capacity: number;
+    season?: number;
 }

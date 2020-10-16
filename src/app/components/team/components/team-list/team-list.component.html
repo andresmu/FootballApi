@@ -6,7 +6,7 @@
 </div>
 <div class="container">
     <h1>Equipos en total: {{totalTeams}}</h1>
-    <h4>Lista de Equipos:</h4>
+    <h4>Lista de Equipos, temporada {{season}}</h4>
     <hr>
     <div class="loading-mask" *ngIf="loading"> </div>
     <div class="row uk-grid" [@listAnimation]="teams.length">

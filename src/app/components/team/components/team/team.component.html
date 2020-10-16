@@ -3,12 +3,13 @@
       <div>
         <img width="100%" style="max-height: 250px;" src="{{team.logo}}" alt="{{team.logo}}">
         <div class="overlay text-center tcolor">
-          <h3>Ver Detalles</h3>
-          <h4>Ver Plantel</h4>
+          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/home']">Ver Detalles</button>
+          <br>
+          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/players', team.team_id, team.season]">Ver Plantel</button>
         </div>
       </div>
-      <h3 title="{{team.name}}" class="mt5 mb0 pb0 pt0 text-ellipsis">
-        <span>{{team.name}} 1</span>
-      </h3>
+      <h4 title="{{team.name}}" class="mt5 mb0 pb0 pt0 text-ellipsis">
+        <span>{{team.name}}</span>
+      </h4>
     </div>
   </div>

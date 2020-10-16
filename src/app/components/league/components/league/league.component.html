@@ -1,4 +1,4 @@
-<mat-card class="character-card" [routerLink]="['/leagues', league.league_id]">
+<mat-card class="character-card" [routerLink]="['/teams', league.league_id,  league.season]">
     <mat-card-header>
       <mat-card-title class="card-title" [matTooltip]="league.name" matTooltipPosition="above">
           {{ (league.name | slice:0:13) + (league.name.length > 13 ? '...' : '') }}

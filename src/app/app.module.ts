@@ -17,11 +17,19 @@ import { AppRoutingModule } from "./app-routing.module";
 // Components
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { TeamComponent } from './components/team/components/team/team.component';
+import { TeamListComponent } from './components/team/components/team-list/team-list.component';
+import { PlayerComponent } from './components/player/components/player/player.component';
+import { PlayerListComponent } from './components/player/components/player-list/player-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    TeamComponent,
+    TeamListComponent,
+    PlayerComponent,
+    PlayerListComponent
   ],
   imports: [
     BrowserModule,

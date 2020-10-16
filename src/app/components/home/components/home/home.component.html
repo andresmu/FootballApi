@@ -1,9 +1,17 @@
 
-<div class="fondo">
+<div class="container fondo">
     <h1>¡Lista de Países!</h1>
     <h4>Selecciona un país:</h4>
+    <div class="col-12">
+        <select class="pull-right" [(ngModel)]="viewCount" (ngModelChange)="changeViewMovie();">
+          <option value="20">25</option>
+          <option value="60">60</option>
+          <option value="100">100</option>
+          <option value="{{totalConutries}}">Todos: {{totalConutries}}</option>
+        </select>
+      </div>
     <hr>
-    <div class="country-grid">
+    <div class="country-grid"> 
         <app-country *ngFor="let country of countries" [country]="country"></app-country>
     </div>
 </div>

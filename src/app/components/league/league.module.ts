@@ -5,20 +5,26 @@ import { FormsModule } from '@angular/forms';
 import { LeagueComponent } from './components/league/league.component';
 import { LeagueListComponent } from './components/league-list/league-list.component';
 import { LeagueRoutingModule } from './league-routing.module';
+import { LeaguesService } from 'src/app/core/services/leagues/leagues.service';
 
 
 @NgModule({
   declarations: [
-    LeagueComponent,
-    LeagueListComponent
+    LeagueListComponent,
+    LeagueComponent
   ],
   imports: [
     CommonModule,
-    LeagueRoutingModule
+    LeagueRoutingModule,
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     LeagueListComponent,
     LeagueComponent
+  ],
+  providers: [
+    LeaguesService
   ]
 })
 export class LeagueModule { }

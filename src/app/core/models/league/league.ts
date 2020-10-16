@@ -10,7 +10,7 @@ interface ILeague {
     season_end: string;
     logo: string;
     flag: string;
-    standings: string;
+    standings: number;
     is_current: number;
     coverage: Coverage;
 }
@@ -26,7 +26,7 @@ export class League implements ILeague {
     season_end: string;
     logo: string;
     flag: string;
-    standings: string;
+    standings: number;
     is_current: number;
     coverage: Coverage;
 }

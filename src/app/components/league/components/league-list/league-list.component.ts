@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { LeaguesService } from 'src/app/core/services/leagues/leagues.service';
+import { ActivatedRoute } from '@angular/router';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-league-list',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeagueListComponent implements OnInit {
 
-  constructor() { }
+  leagues = [];
+  totalLeagues: string;
+  season = 2020;
+
+  constructor(private leaguesService: LeaguesService, private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.router.params.subscribe(routeParams => {
+      this.getLeaguesByCountry(routeParams.code);
+    });
+  }
+
+  public getLeaguesByCountry(code: string) {
+      this.leaguesService.getLeaguesByCountry(code)
+        .pipe(
+          take(1)
+        )
+        .subscribe(
+          res => {
+            this.totalLeagues = res.api.results.toString();
+            this.leagues = res.api.leagues;
+          },
+          err => {
+            console.log(err);
+          },
+          () => {
+              // petición finalizada
+          });
   }
 
 }

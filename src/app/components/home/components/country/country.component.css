@@ -1,5 +1,6 @@
 .hvrbox, .hvrbox * {
-	 box-sizing: border-box;
+     box-sizing: border-box;
+     cursor: pointer;
 }
  .hvrbox {
 	 position: relative;

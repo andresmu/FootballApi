@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesService } from 'src/app/core/services/countries/countries.service';
 import { take } from 'rxjs/operators';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent implements OnInit {
   
   public viewCount = 20;
-  totalConutries = 0;
+  totalCountries = 0;
   countries = [];
   countriesList = [];
 
-  constructor(private episodesService: CountriesService, private router: ActivatedRoute) {
+  constructor(private countriesService: CountriesService) {
 
    }
 
@@ -30,10 +29,10 @@ export class HomeComponent implements OnInit {
 
   getCountries(){
     this.countries = [];
-    this.episodesService.getAllCoutries().pipe(take(1)).subscribe(
+    this.countriesService.getAllCoutries().pipe(take(1)).subscribe(
       response => {
         this.countriesList = response.api.countries;
-        this.totalConutries = response.api.results;
+        this.totalCountries = response.api.results;
         this.countries = response.api.countries.slice(0, this.viewCount);
       },
       err => {

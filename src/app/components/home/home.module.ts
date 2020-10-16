@@ -10,7 +10,7 @@ import { CountryComponent } from './components/country/country.component';
 @NgModule({
   declarations: [
     HomeComponent,
-    CountryComponent,
+    CountryComponent
   ],
   imports: [
     CommonModule,

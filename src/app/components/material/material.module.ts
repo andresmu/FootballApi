@@ -1,57 +1,44 @@
-import { MatPaginatorImpl } from './mat-paginator';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTableModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatSortModule, MatPaginatorModule, MatCardModule, MatSnackBarModule, MatSidenavModule, MatMenuModule, MatToolbarModule, MatDividerModule, MatDialogModule, MatPaginatorIntl, MatCheckboxModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MAT_DATE_LOCALE, MatExpansionModule, MatAutocompleteModule } from '@angular/material';
+import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    MatTableModule,
+    MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatListModule,
+    MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatSnackBarModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatDividerModule,
-    MatDialogModule,
-    MatCheckboxModule,
     MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatExpansionModule,
-    MatAutocompleteModule
-  ],exports:[
-    MatButtonModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule,
-    MatSortModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatSnackBarModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatDividerModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatExpansionModule,
-    MatAutocompleteModule
+    MatSnackBarModule
   ],
-  providers: [
-    { provide: MatPaginatorIntl, useClass: MatPaginatorImpl},
-    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+  exports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
+    MatListModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

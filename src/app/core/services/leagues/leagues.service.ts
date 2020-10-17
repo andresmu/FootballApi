@@ -13,7 +13,7 @@ export class LeaguesService {
   constructor(private http: HttpClient) { }
 
   getAllLeagues() {
-    return this.http.get<any>(`${environment.API}/leagues/type/league/2020`);
+    return this.http.get<Api<League>>(`${environment.API}/leagues/type/league/2020`);
    }
 
   getLeaguesByCountry(countryCode: string, season?: number) {

@@ -1,4 +1,4 @@
-<mat-card class="character-card" [routerLink]="['/teams', league.league_id,  league.season]">
+<mat-card class="league-card" [routerLink]="['/teams', league.league_id,  league.season]">
     <mat-card-header>
       <mat-card-title class="card-title" [matTooltip]="league.name" matTooltipPosition="above">
           {{ (league.name | slice:0:13) + (league.name.length > 13 ? '...' : '') }}
@@ -27,12 +27,12 @@
                 <p class="card-content-description">{{ (league.is_current === 0 ? 'Si' : 'No')}}</p>
             </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item class="character-list-item">
+            <mat-list-item class="league-list-item">
                 <h3 matLine>Inicio:</h3>
                 <p class="card-content-description" [matTooltip]="league.season_start" matTooltipPosition="left">{{ (league.season_start | slice: 0:5) + (league.season_start.length > 5 ? '...' : '')}}</p>
             </mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item class="character-list-item">
+            <mat-list-item class="league-list-item">
                 <h3 matLine>Final:</h3>
                 <p class="card-content-description" [matTooltip]="league.season_end" matTooltipPosition="left">{{ (league.season_end | slice: 0:5) + (league.season_end.length > 5 ? '...' : '')}}</p>
             </mat-list-item>

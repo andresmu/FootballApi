@@ -13,6 +13,6 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   getTeamsByLeague(leagueId: number) {
-    return this.http.get<any>(`${environment.API}/teams/league/${leagueId}`);
+    return this.http.get<Api<Team>>(`${environment.API}/teams/league/${leagueId}`);
    }
 }

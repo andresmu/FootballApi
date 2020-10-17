@@ -1,1 +1,42 @@
-<p>player works!</p>
+<mat-card class="league-card">
+    <mat-card-header>
+      <mat-card-title class="card-title" [matTooltip]="player.player_name" matTooltipPosition="above">
+          {{ (player.player_name | slice:0:13) + (player.player_name.length > 13 ? '...' : '') }}
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="/assets/images/playerPhoto.png" alt="" style="height: 150px;">
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <h3 matLine class="card-content-title">País:</h3>
+                <p class="card-content-description">{{ player.nationality }}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <h3 matLine>Posición:</h3>
+                <p class="card-content-description">{{ player.position }}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <h3 matLine>Edad:</h3>
+                <p class="card-content-description">{{ player.age}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <h3 matLine>Nacimiento:</h3>
+                <p class="card-content-description" [matTooltip]="player.birth_date" matTooltipPosition="left">{{ (player.birth_date | slice: 0:5) + (player.birth_date.length > 5 ? '...' : '')}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item class="league-list-item">
+                <h3 matLine>Inicio:</h3>
+                <p class="card-content-description">{{ (player.height !== null ? (player.height | removewhitespaces) : 'Null')}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item class="league-list-item">
+                <h3 matLine>Final:</h3>
+                <p class="card-content-description" >{{ (player.weight !== null ? (player.weight | removewhitespaces)  : 'Null')}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

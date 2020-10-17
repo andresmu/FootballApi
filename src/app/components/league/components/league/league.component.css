@@ -1,4 +1,4 @@
-.character-card {
+.league-card {
     max-width: 300px;
     background: rgb(212, 208, 208);
     margin: auto;
@@ -6,7 +6,7 @@
     transition: all 0.5s;
     cursor: pointer;
 }
-.character-card:hover {
+.league-card:hover {
     background: #34580c;
     transform: scale(1.1);
    /*cursor: url(assets/images/cursor.png), auto;
@@ -18,9 +18,9 @@
 .card-content-description {
     color: #ff0000;
 }
-.character-list-item {
+.league-list-item {
     justify-content: space-between;
 }
-.character-list-item p {
+.league-list-item p {
     text-align: right;
 }

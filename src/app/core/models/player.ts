@@ -12,6 +12,10 @@ interface IPlayer {
     nationality: string;
     height: string;
     weight: string;
+    team_id: 529;
+    team_name: string;
+    league: string;
+    season: number;
 }
 
 export class Player implements IPlayer {
@@ -28,4 +32,8 @@ export class Player implements IPlayer {
     nationality: string;
     height: string;
     weight: string;
+    team_id: 529;
+    team_name: string;
+    league: string;
+    season: number;
 }

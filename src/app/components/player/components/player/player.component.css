@@ -1,0 +1,25 @@
+.league-card {
+    max-width: 300px;
+    background: rgb(212, 208, 208);
+    margin: auto;
+    margin-bottom: 15px;
+    transition: all 0.5s;
+}
+.league-card:hover {
+    background: #34580c;
+    transform: scale(1.1);
+   /*cursor: url(assets/images/cursor.png), auto;
+   */
+}
+.card-title {
+    color: #000000;
+}
+.card-content-description {
+    color: #ff0000;
+}
+.league-list-item {
+    justify-content: space-between;
+}
+.league-list-item p {
+    text-align: right;
+}

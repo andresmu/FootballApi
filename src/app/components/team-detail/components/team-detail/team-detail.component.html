@@ -1,1 +1,29 @@
-<p>team-detail works!</p>
+<div *ngFor="let team of teams" class="m-3">
+    <div class="container fondo">
+        <h1 class="animated fadeIn">{{team.name | uppercase}} <small>({{ team.founded }})</small></h1>
+        <hr>
+        <div class="row animated fadeIn fast">
+            <div class="col-md-4">
+                <img [src]="team.logo" class="img-fluid" [alt]="team.name" style="width: 100%;">
+                <br><br>
+                <a (click)="location.back();" class="btn btn-outline-danger btn-block"><i
+                    class="material-icons">
+                    keyboard_backspace
+                </i></a>
+            </div>
+            <div class="col-md-8">
+                <h3>{{ team.name }}</h3>
+                <hr>
+                <h5><strong>Liga/País: </strong> {{ team.country }}.</h5>
+                <h5><strong>Estadio: </strong> {{ team.venue_name }}.</h5>
+                <h5><strong>Ciudad: </strong> {{ team.venue_city }}.</h5>
+                <h5><strong>Dirección: </strong> {{ team.venue_address}}.</h5>
+                <h5><strong>Capacidad: </strong> {{ team.venue_capacity | number }}.</h5>
+                <!-- <div>
+                    <img *ngIf="animal.habitat == 'Terrestre'" class="img-logo" src="assets/img/tierra.jpg" alt="Terrestre">
+                    <img *ngIf="animal.habitat != 'Terrestre'" class="img-logo" src="assets/img/agua.png" alt="Acuático">
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>

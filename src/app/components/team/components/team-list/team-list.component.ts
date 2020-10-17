@@ -54,7 +54,7 @@ export class TeamListComponent implements OnInit {
         this.totalTeams = res.api.results.toString();
         this.teams = res.api.teams;
         this.loading = false;
-        console.log('Done' + this.season);
+        console.log('Done');
         this.teams.forEach(team => {
           team.season = this.season;
         });

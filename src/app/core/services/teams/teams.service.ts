@@ -15,4 +15,9 @@ export class TeamsService {
   getTeamsByLeague(leagueId: number) {
     return this.http.get<Api<Team>>(`${environment.API}/teams/league/${leagueId}`);
    }
+
+   getTeamsDetail(teamId: number) {
+    return this.http.get<Api<Team>>(`${environment.API}/teams/team/${teamId}`);
+   }
+
 }

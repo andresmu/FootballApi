@@ -3,7 +3,7 @@
       <div>
         <img width="100%" style="max-height: 250px;" src="{{team.logo}}" alt="{{team.logo}}">
         <div class="overlay text-center tcolor">
-          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/home']">Ver Detalles</button>
+          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/teamDetail', team.team_id]">Ver Detalles</button>
           <br>
           <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/players', team.team_id, team.season]">Ver Plantel</button>
         </div>

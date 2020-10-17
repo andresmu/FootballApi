@@ -29,6 +29,11 @@ const routes: Routes = [
         loadChildren: () => import('./components/team/team.module').then(m => m.TeamModule)
       },
       {
+        //Equipos detalles
+        path: 'teamDetail/:teamId',
+        loadChildren: () => import('./components/team-detail/team-detail.module').then(m => m.TeamDetailModule)
+      },
+      {
         //Jugadores por equipo y temporada
         path: 'players/:team/:season',
         loadChildren: () => import('./components/player/player.module').then(m => m.PlayerModule)

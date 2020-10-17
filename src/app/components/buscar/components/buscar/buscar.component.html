@@ -1,0 +1,15 @@
+<div class="md-card mb10">
+    <div class="md-card-content container pr0 pl0">
+      <div>
+        <img width="100%" style="max-height: 250px;" src="{{team.logo}}" alt="{{team.logo}}">
+        <div class="overlay text-center tcolor">
+          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/teamDetail', team.team_id]">Ver Detalles</button>
+          <br>
+          <button class="btn btn btn-outline-light mt-2" style="width: 80%;" [routerLink]="['/players', team.team_id, 2020]">Ver Plantel 2020</button>
+        </div>
+      </div>
+      <h4 title="{{team.name}}" class="mt5 mb0 pb0 pt0 text-ellipsis">
+        <span>{{team.name}}</span>
+      </h4>
+    </div>
+  </div>

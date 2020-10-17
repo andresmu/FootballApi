@@ -1,0 +1,20 @@
+<div class="col-12 mt-2">
+    <button pButton type="button" (click)="location.back();" class="btn btn-outline-secondary btn-sm"><i
+        class="material-icons">
+        keyboard_backspace
+    </i></button>
+</div>
+<div class="container">
+    <h1>Equipos en total Encontrados: {{totalTeams}}</h1>
+    <h4>Equipos con el término: {{text}}</h4>
+    <hr>
+    <div class="loading-mask" *ngIf="loading"> </div>
+    <div *ngIf="haveTeams">
+        <div class="row uk-grid">
+            <app-buscar *ngFor="let team of teams" [team]="team" class="col-4 uk-row-first mt5"></app-buscar>
+        </div>
+    </div>
+    <div *ngIf="!haveTeams" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <i class="far fa-futbol fa-spin"></i> <strong> Upsss!!!</strong> {{message}} <strong><i>{{text}} </i></strong> <i class="fas fa-search"></i>
+      </div>
+</div>

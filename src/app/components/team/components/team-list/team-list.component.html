@@ -9,7 +9,7 @@
     <h4>Lista de Equipos, temporada {{season}}</h4>
     <hr>
     <div class="loading-mask" *ngIf="loading"> </div>
-    <div class="row uk-grid" [@listAnimation]="teams.length">
+    <div class="row uk-grid">
         <app-team *ngFor="let team of teams" [team]="team" class="col-4 uk-row-first mt5"></app-team>
     </div>
 </div>

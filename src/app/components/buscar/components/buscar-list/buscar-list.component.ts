@@ -1,33 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { TeamsService } from 'src/app/core/services/teams/teams.service';
-import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-team-list',
-  templateUrl: './team-list.component.html',
-  styleUrls: ['./team-list.component.css']
+  selector: 'app-buscar-list',
+  templateUrl: './buscar-list.component.html',
+  styleUrls: ['./buscar-list.component.css']
 })
-export class TeamListComponent implements OnInit {
+export class BuscarListComponent implements OnInit {
 
+  text: string;
   loading: boolean = true;
+  haveTeams: boolean = true;
+  message: string;
   teams = [];
   totalTeams: string;
-  season: number;
-
 
   constructor(public location: Location, private teamServices: TeamsService, private router: ActivatedRoute) { }
 
   ngOnInit() {
     this.router.params.subscribe(routeParams => {
-      this.getTeamsByLeague(routeParams.league);
-      this.season = routeParams.season;
+      this.text = routeParams.texto.replace(' ', '_');
+      this.getTeamsBySearch(routeParams.texto);
     });
   }
 
-  public getTeamsByLeague(leagueId: number){
-    this.teamServices.getTeamsByLeague(leagueId)
+  public getTeamsBySearch(text: string){
+    this.teamServices.searchTeam(text)
     .pipe(
       take(1)
     )
@@ -36,10 +37,13 @@ export class TeamListComponent implements OnInit {
         this.totalTeams = res.api.results.toString();
         this.teams = res.api.teams;
         this.loading = false;
+        if (this.teams.length > 0) {
+          this.haveTeams = true;
+        }else{
+          this.haveTeams = false;
+          this.message = 'No se encuentran Equipos registrados con el termino: .'
+        }
         console.log('Done');
-        this.teams.forEach(team => {
-          team.season = this.season;
-        });
       },
       err => {
         console.log(err);
@@ -48,4 +52,5 @@ export class TeamListComponent implements OnInit {
           // petición finalizada
       });
   }
+
 }

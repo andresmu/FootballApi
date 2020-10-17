@@ -19,5 +19,8 @@ export class TeamsService {
    getTeamsDetail(teamId: number) {
     return this.http.get<Api<Team>>(`${environment.API}/teams/team/${teamId}`);
    }
+   searchTeam(text: string){
+    return this.http.get<Api<Team>>(`${environment.API}/teams/search/${text}`);
+   }
 
 }

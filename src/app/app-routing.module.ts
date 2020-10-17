@@ -19,6 +19,11 @@ const routes: Routes = [
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
       },
       {
+        //Busqueda de Equipo
+        path: 'busqueda/:texto',
+        loadChildren: () => import('./components/buscar/buscar.module').then(m => m.BuscarModule)
+      },
+      {
         //Ligas
         path: 'leagues/:code',
         loadChildren: () => import('./components/league/league.module').then(m => m.LeagueModule)

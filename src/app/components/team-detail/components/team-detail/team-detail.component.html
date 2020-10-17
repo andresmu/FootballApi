@@ -1,6 +1,7 @@
+<div class="loading-mask" *ngIf="loading"> </div>
 <div *ngFor="let team of teams" class="m-3">
     <div class="container fondo">
-        <h1 class="animated fadeIn">{{team.name | uppercase}} <small>({{ team.founded }})</small></h1>
+        <h1 class="animated fadeIn">{{team.name | uppercase}} <small>({{ (team.founded !== null ? team.founded  : 'Null') }})</small></h1>
         <hr>
         <div class="row animated fadeIn fast">
             <div class="col-md-4">

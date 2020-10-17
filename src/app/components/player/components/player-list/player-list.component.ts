@@ -41,7 +41,7 @@ export class PlayerListComponent implements OnInit {
           this.havePlayers = true;
         }else{
           this.havePlayers = false;
-          this.message = 'No hay jugadores de este plantel registrados en esta API.'
+          this.message = 'No hay jugadores de este plantel registrados en la API.'
         }
         this.loading = false;
         console.log('Done' + this.season);
